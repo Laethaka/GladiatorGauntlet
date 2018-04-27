@@ -33,22 +33,37 @@ const maximus = new Gladiator('Maximus', 120, 20, 15);
 
 
 
-// GLADIATOR INFO UPDATE
+// GLADIATOR UPDATE FUNCTIONS
 function thraexUpdate() {
     $(`#thraexHeader`).text(thraex.name);
     $(`#thraexHealth`).text(thraex.health);
     $('#thraexAttack').text(thraex.attack);
 };
-// function gladiatorUpdate(gladiator) {
-//     $(`#retariusHeader`).text(gladiator.name);
-// };
-// function gladiatorUpdate(gladiator) {
-//     $(`#murmillaHeader`).text(gladiator.name);
-// };
-// function gladiatorUpdate(gladiator) {
-// };
+function retariusUpdate() {
+    $(`#retariusHeader`).text(retarius.name);
+    $(`#retariusHealth`).text(retarius.health);
+    $('#retariusAttack').text(retarius.attack);
+};
+function murmillaUpdate() {
+    $(`#murmillaHeader`).text(murmilla.name);
+    $(`#murmillaHealth`).text(murmilla.health);
+    $('#murmillaAttack').text(murmilla.attack);
+};
+function maximusUpdate() {
+    $(`#maximusHeader`).text(maximus.name);
+    $(`#maximusHealth`).text(maximus.health);
+    $('#maximusAttack').text(maximus.attack);
+};
 
-gladiatorUpdate(gladiator);
+//SET INITIAL VALUES ON DOM
+thraexUpdate();
+retariusUpdate();
+murmillaUpdate();
+maximusUpdate();
+
+
+
+
 
 //SET GLADIATOR DOMS WITH INITIAL VALUES
 $('#thraexPic').attr('src', 'assets/images/thraex.jpg')
