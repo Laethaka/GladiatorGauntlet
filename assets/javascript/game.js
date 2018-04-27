@@ -61,8 +61,12 @@ retariusUpdate();
 murmillaUpdate();
 maximusUpdate();
 
-
-
+//GLADIATOR FOCUS PIC STYLING
+$('.gladiatorPic').on('mouseenter', event => {
+    $(event.currentTarget).animate({width: '90%'}, 'fast')
+  }).on('mouseleave', event => {
+    $(event.currentTarget).animate({width: '80%'}, 'fast')
+  })
 
 
 //SET GLADIATOR DOMS WITH INITIAL VALUES

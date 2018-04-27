@@ -14,7 +14,7 @@ h1 {
     text-align: center;
     padding-top: 50px;
     color: black;
-    background: rgba(204, 39, 39, 0.66);
+    background: rgba(201, 32, 117, 0.8);
 }
 
 .headerImg {
@@ -26,10 +26,18 @@ h1 {
 }
 
 .gladiator {
-    background: rgba(204, 39, 39, 0.66);
+    font-family: 'Bowlby One SC', cursive;
+    color: black;
+    background: rgba(201, 32, 117, 0.8);
     border: 2px solid white;
     width: 15%;
     margin: 0 5px;
+    font-weight: 550;
+    text-align: center;
+}
+
+.gladiatorHeader {
+    color: #6A0B0B;
 }
 
 .gladiatorPic {
@@ -38,8 +46,47 @@ h1 {
 }
 
 .chooseChamp {
-    background: rgba(204, 39, 39, 0.66);
+    background: rgba(201, 32, 117, 0.8);
     border: 2px solid white;
     height: 200px;
     margin: 0 5px;
+}
+
+.chooseChamp {
+    text-align: center;
+}
+
+.chooseChamp p {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
 }
