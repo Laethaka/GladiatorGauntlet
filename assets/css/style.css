@@ -1,0 +1,21 @@
+body {
+    background-image: url('../images/2373.jpg');
+}
+
+h1 {
+    font-family: 'Bowlby One SC', cursive;
+    text-align: center;
+    margin-top: 15px;
+    color: red;
+}
+
+.quote {
+    font-style: italic;
+    text-align: center;
+    padding-top: 50px;
+    color: red;
+}
+
+.headerImg {
+    width: 100%;
+}
