@@ -13,9 +13,28 @@ h1 {
     font-style: italic;
     text-align: center;
     padding-top: 50px;
-    color: red;
+    color: black;
+    background: rgba(204, 39, 39, 0.66);
 }
 
 .headerImg {
     width: 100%;
+}
+
+.gameRow {
+    margin-top: 20px;
+}
+
+.gladiator {
+    background: rgba(204, 39, 39, 0.66);
+    border: 2px solid white;
+    height: 200px;
+    margin: 0 5px;
+}
+
+.chooseChamp {
+    background: rgba(204, 39, 39, 0.66);
+    border: 2px solid white;
+    height: 200px;
+    margin: 0 5px;
 }
