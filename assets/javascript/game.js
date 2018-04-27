@@ -31,6 +31,35 @@ const retarius = new Gladiator('Retarius', 90, 15, 15);
 const murmilla = new Gladiator('Murmilla', 135, 5, 15);
 const maximus = new Gladiator('Maximus', 120, 20, 15);
 
+
+
+// GLADIATOR INFO UPDATE
+function thraexUpdate() {
+    $(`#thraexHeader`).text(thraex.name);
+    $(`#thraexHealth`).text(thraex.health);
+    $('#thraexAttack').text(thraex.attack);
+};
+// function gladiatorUpdate(gladiator) {
+//     $(`#retariusHeader`).text(gladiator.name);
+// };
+// function gladiatorUpdate(gladiator) {
+//     $(`#murmillaHeader`).text(gladiator.name);
+// };
+// function gladiatorUpdate(gladiator) {
+// };
+
+gladiatorUpdate(gladiator);
+
+//SET GLADIATOR DOMS WITH INITIAL VALUES
+$('#thraexPic').attr('src', 'assets/images/thraex.jpg')
+$('#retariusPic').attr('src', 'assets/images/retarius.jpg')
+$('#murmillaPic').attr('src', 'assets/images/murmilla.jpg')
+$('#maximusPic').attr('src', 'assets/images/maximus.jpg')
+
+
+
+
+
 //COLORCYCLING TEXT
 var colorIndex = 0;
 var colors = ["red", "orange", "yellow", "white"];

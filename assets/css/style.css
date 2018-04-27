@@ -28,8 +28,13 @@ h1 {
 .gladiator {
     background: rgba(204, 39, 39, 0.66);
     border: 2px solid white;
-    height: 200px;
+    width: 15%;
     margin: 0 5px;
+}
+
+.gladiatorPic {
+    margin-top: 10px;
+    width: 80%;
 }
 
 .chooseChamp {
