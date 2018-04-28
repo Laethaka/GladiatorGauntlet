@@ -10,7 +10,9 @@ h1 {
 }
 
 .quote {
-    font-style: italic;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+    /* font-style: italic; */
     text-align: center;
     padding-top: 50px;
     color: black;
@@ -22,7 +24,7 @@ h1 {
 }
 
 .gameRow {
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .gladiator {
@@ -92,9 +94,11 @@ h1 {
 }
 
 .heroClass {
-    background: green;    
+    background: rgba(63, 191, 63, 0.8);
+    margin-top: 10px;
 }
 
 .opponentClass {
-    background: red;
+    background: rgba(246, 33, 33, 0.8);
+    margin-top: 10px;
 }
