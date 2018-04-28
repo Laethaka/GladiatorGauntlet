@@ -1,36 +1,20 @@
 //GLADIATOR OBJECT PARENT
 class Gladiator {
     constructor(name, health, attack, riposte) {
-        this._name = name;
-        this._health = health;
-        this._attack = attack;
-        this._riposte = riposte;
-    }
-
-    get name() {
-        return this._name;
-    }
-    get health() {
-        return this._health;
-    }
-    get attack() {
-        return this._attack;
-    }
-    get riposte() {
-        return this._riposte;
-    }
-
-    takeDamage(damage) {
-        this._health -= damage;
+        this.name = name;
+        this.health = health;
+        this.attack = attack;
+        this.riposte = riposte;
     }
 }
 
 //GLADIATOR OBJECTS
-const thraex = new Gladiator('Thraex', 110, 10, 15);
-const retarius = new Gladiator('Retarius', 90, 15, 15);
-const murmilla = new Gladiator('Murmilla', 135, 5, 15);
-const maximus = new Gladiator('Maximus', 120, 20, 15);
-
+var thraex = new Gladiator('Thraex', 110, 10, 15);
+var retarius = new Gladiator('Retarius', 90, 15, 15);
+var murmilla = new Gladiator('Murmilla', 135, 5, 15);
+var maximus = new Gladiator('Maximus', 120, 20, 15);
+var hero = {};
+var opponentsArr = [thraex, retarius, murmilla, maximus];
 
 
 // GLADIATOR UPDATE FUNCTIONS
@@ -75,7 +59,24 @@ $('#retariusPic').attr('src', 'assets/images/retarius.jpg')
 $('#murmillaPic').attr('src', 'assets/images/murmilla.jpg')
 $('#maximusPic').attr('src', 'assets/images/maximus.jpg')
 
-
+//GLADIATOR CHOICE
+$('.gladiatorPic').on('click', function() {
+    if ($(this).attr('id') === 'thraexPic') { ///PLAYER CHOSE THRAEX
+        hero = thraex;
+        opponentsArr.shift();
+        // $('#thraex').addId('hero');
+    } else if ($(this).attr('id') === 'retariusPic') { //PLAYER CHOSE RETARIUS
+        hero = retarius;
+        opponentsArr.splice(1,1);
+    } else if ($(this).attr('id') === 'murmillaPic') { //PLAYER CHOSE MURMILLA
+        hero = murmilla;
+        opponentsArr.splice(2,1);
+    } else { //PLAYER CHOSE MAXIMUS
+        hero = maximus;
+        opponentsArr.pop();
+    }
+    $('.gladiatorPic').removeClass('gladiatorPic');
+})
 
 
 
