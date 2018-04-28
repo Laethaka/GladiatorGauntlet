@@ -64,16 +64,23 @@ $('.gladiatorPic').on('click', function() {
     if ($(this).attr('id') === 'thraexPic') { ///PLAYER CHOSE THRAEX
         hero = thraex;
         opponentsArr.shift();
-        // $('#thraex').addId('hero');
+        $('#thraex').addClass('heroClass');
+        $('#retarius, #murmilla, #maximus').addClass('opponentClass')
     } else if ($(this).attr('id') === 'retariusPic') { //PLAYER CHOSE RETARIUS
         hero = retarius;
         opponentsArr.splice(1,1);
+        $('#retarius').addClass('heroClass');
+        $('#thraex, #murmilla, #maximus').addClass('opponentClass')
     } else if ($(this).attr('id') === 'murmillaPic') { //PLAYER CHOSE MURMILLA
         hero = murmilla;
         opponentsArr.splice(2,1);
+        $('#murmilla').addClass('heroClass');
+        $('#retarius, #thraex, #maximus').addClass('opponentClass')
     } else { //PLAYER CHOSE MAXIMUS
         hero = maximus;
         opponentsArr.pop();
+        $('#maximus').addClass('heroClass');
+        $('#retarius, #murmilla, #thraex').addClass('opponentClass')
     }
     $('.gladiatorPic').removeClass('gladiatorPic');
 })
