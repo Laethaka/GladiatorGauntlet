@@ -20,26 +20,30 @@ var enemy = {};
 // var opponentsArr = [thraex, retarius, murmilla, maximus];
 var heroChosen = false;
 var enemyChosen = false;
+var wins = 0;
+$('#winSpan').text(wins);
+var losses = 0;
+$('#lossSpan').text(losses);
 
 //GLADIATOR STAT PUSH FUNCTIONS
 function thraexUpdate() {
     $(`#thraexHeader`).text(thraex.name);
-    $(`#thraexHealth`).text(thraex.health);
+    $(`#thraex #gladiatorHealth`).text(thraex.health);
     $('#thraexAttack').text(thraex.attack);
 };
 function retariusUpdate() {
     $(`#retariusHeader`).text(retarius.name);
-    $(`#retariusHealth`).text(retarius.health);
+    $(`#retarius #gladiatorHealth`).text(retarius.health);
     $('#retariusAttack').text(retarius.attack);
 };
 function murmillaUpdate() {
     $(`#murmillaHeader`).text(murmilla.name);
-    $(`#murmillaHealth`).text(murmilla.health);
+    $(`#murmilla #gladiatorHealth`).text(murmilla.health);
     $('#murmillaAttack').text(murmilla.attack);
 };
 function maximusUpdate() {
-    $(`#maximusHeader`).text(maximus.name);
-    $(`#maximusHealth`).text(maximus.health);
+    $('#maximusHeader').text(maximus.name);
+    $(`#maximus #gladiatorHealth`).text(maximus.health);
     $('#maximusAttack').text(maximus.attack);
 };
 
@@ -123,8 +127,9 @@ $('.gladiatorPic').on('click', function() {
 
 
 function combat() {
-    enemy.health -= hero.attack;
-    $('.enemyHealth').text(enemy.health);
+    //HERO HITS FIRST
+    enemy.health -= hero.attack; 
+    $('.enemyClass #gladiatorHealth').text(enemy.health);
         if (enemy.health <= 0) { //ENEMY KILLED
             $('.enemyClass').animate ({top: '+=200px'}, 'slow');
             $('.enemyClass .gladiatorHeader').text("DEAD");
@@ -135,8 +140,15 @@ function combat() {
             $('#attackBtn').addClass('invisible');
             $('#instructions').text('Choose your next opponent!');
         };
+    //ENEMY HITS BACK
     hero.health -= enemy.attack;
-    $('.heroClass')
+    $('.heroClass #gladiatorHealth').text(hero.health);
+        if (hero.health <= 0) { //HERO KILLED
+            $('.heroClass').removeClass('heroClass');
+            $('.enemyClass').removeClass('enemyClass');
+            losses++;
+            $('#lossSpan').text(losses);
+        }
 }
 
 

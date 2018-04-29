@@ -18,7 +18,16 @@
         <div class="container">
                 <div class="header row">
                         <div class="col-lg-8"><img src="assets/images/r_gladiators.jpg" class="mx-auto headerImg"></div>
-                        <div class="quote col-lg-4"><p>“Je serai forte. Comme une femme. Comme un gladiateur.”</p><p>-Arroum Rawia</p></div>
+                        <div class="col-lg-4 info-box">
+                                <p class="quote">“Je serai forte. Comme une femme. Comme un gladiateur.” -Arroum Rawia</p>
+                                <button onclick='gameReset()' type="button" class="btn btn-danger btn-lg mx-auto invisible" id="gameResetBtn">Play Again</button>
+                                <div class="session-totals">
+                                        <br>
+                                        <br>
+                                        <p>Games Won: <span id="winSpan"></span></p>
+                                        <p>Games Lost: <span id="lossSpan"></span></p>
+                                </div>
+                        </div>
                 </div>
 
                 <div class="row gameRow">
@@ -27,7 +36,7 @@
                                 <img class="card-img-top gladiatorPic mx-auto" src="" alt="Card image cap" id="thraexPic">
                                 <div class="card-body">
                                         <h5 class="card-title gladiatorHeader" id="thraexHeader"></h5>
-                                        <p class="card-text healthLine">Health: <span id="thraexHealth"></span></p>
+                                        <p class="card-text healthLine">Health: <span id="gladiatorHealth"></span></p>
                                         <p class="card-text attackLine">Strength: <span id="thraexAttack"></span></p>
                                 </div>
                         </div>
@@ -36,7 +45,7 @@
                                 <img class="card-img-top gladiatorPic mx-auto" src="" alt="Card image cap" id="retariusPic">
                                 <div class="card-body">
                                         <h5 class="card-title gladiatorHeader" id="retariusHeader"></h5>
-                                        <p class="card-text healthLine">Health: <span id="retariusHealth"></span></p>
+                                        <p class="card-text healthLine">Health: <span id="gladiatorHealth"></span></p>
                                         <p class="card-text attackLine">Strength: <span id="retariusAttack"></span></p>
                                 </div>
                         </div>
@@ -45,7 +54,7 @@
                                 <img class="card-img-top gladiatorPic mx-auto" src="" alt="Card image cap" id="murmillaPic">
                                 <div class="card-body">
                                         <h5 class="card-title gladiatorHeader" id="murmillaHeader"></h5>
-                                        <p class="card-text healthLine">Health: <span id="murmillaHealth"></span></p>
+                                        <p class="card-text healthLine">Health: <span id="gladiatorHealth"></span></p>
                                         <p class="card-text attackLine">Strength: <span id="murmillaAttack"></span></p>
                                 </div>
                         </div>
@@ -54,7 +63,7 @@
                                 <img class="card-img-top gladiatorPic mx-auto" src="" alt="Card image cap" id="maximusPic">
                                 <div class="card-body">
                                         <h5 class="card-title gladiatorHeader" id="maximusHeader"></h5>
-                                        <p class="card-text  healthLine">Health: <span id="maximusHealth"></span></p>
+                                        <p class="card-text  healthLine">Health: <span id="gladiatorHealth"></span></p>
                                         <p class="card-text attackLine">Strength: <span id="maximusAttack"></span></p>
                                 </div>
                         </div>
