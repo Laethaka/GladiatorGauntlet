@@ -28,7 +28,7 @@
                                 <div class="card-body">
                                         <h5 class="card-title gladiatorHeader" id="thraexHeader"></h5>
                                         <p class="card-text">Health: <span id="thraexHealth"></span></p>
-                                        <p class="card-text">Attack: <span id="thraexAttack"></span></p>
+                                        <!-- <p class="card-text">Attack: <span id="thraexAttack"></span></p> -->
                                 </div>
                         </div>
 
@@ -37,7 +37,7 @@
                                 <div class="card-body">
                                         <h5 class="card-title gladiatorHeader" id="retariusHeader"></h5>
                                         <p class="card-text">Health: <span id="retariusHealth"></span></p>
-                                        <p class="card-text">Attack: <span id="retariusAttack"></span></p>
+                                        <!-- <p class="card-text">Attack: <span id="retariusAttack"></span></p> -->
                                 </div>
                         </div>
 
@@ -46,7 +46,7 @@
                                 <div class="card-body">
                                         <h5 class="card-title gladiatorHeader" id="murmillaHeader"></h5>
                                         <p class="card-text">Health: <span id="murmillaHealth"></span></p>
-                                        <p class="card-text">Attack: <span id="murmillaAttack"></span></p>
+                                        <!-- <p class="card-text">Attack: <span id="murmillaAttack"></span></p> -->
                                 </div>
                         </div>
 
@@ -55,11 +55,12 @@
                                 <div class="card-body">
                                         <h5 class="card-title gladiatorHeader" id="maximusHeader"></h5>
                                         <p class="card-text">Health: <span id="maximusHealth"></span></p>
-                                        <p class="card-text">Attack: <span id="maximusAttack"></span></p>
+                                        <!-- <p class="card-text">Attack: <span id="maximusAttack"></span></p> -->
                                 </div>
                         </div>
-                        <div class='chooseChamp col-md-3' id='gameWindow'>
-                                <p>Pick a gladiator to be your champion in the arena!</p>
+                        <div class='gameLog col-md-3' id='gameWindow'>
+                                <p id="instructions">Pick a gladiator to be your champion in the arena!</p>
+                                <button onclick='combat()' type="button" class="btn btn-danger btn-lg mx-auto invisible" id="attackBtn">Attack!</button>
                         </div>
                 </div>
         </div>

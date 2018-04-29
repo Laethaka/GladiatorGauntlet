@@ -11,12 +11,13 @@ h1 {
 
 .quote {
     font-family: 'Kaushan Script', cursive;
-    font-size: 24px;
-    /* font-style: italic; */
+    font-size: 36px;
     text-align: center;
     padding-top: 50px;
     color: black;
     background: rgba(201, 32, 117, 0.8);
+    border: 2px solid white;
+    height: 329px;
 }
 
 .headerImg {
@@ -47,18 +48,18 @@ h1 {
     width: 80%;
 }
 
-.chooseChamp {
+.gameLog {
     background: rgba(201, 32, 117, 0.8);
     border: 2px solid white;
     height: 200px;
     margin: 0 5px;
-}
-
-.chooseChamp {
     text-align: center;
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 24px;
+    padding: 10px;
 }
 
-.chooseChamp p {
+#instructions {
     -webkit-animation-name: blinker;
     -webkit-animation-duration: 1s;
     -webkit-animation-timing-function: linear;
@@ -99,6 +100,11 @@ h1 {
 }
 
 .opponentClass {
-    background: rgba(246, 33, 33, 0.8);
+    background: rgba(191, 191, 63, 0.8);
+    margin-top: 10px;
+}
+
+.enemyClass {
+    background: rgba(230, 14, 14, 0.8);
     margin-top: 10px;
 }

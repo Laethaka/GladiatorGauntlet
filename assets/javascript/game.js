@@ -16,8 +16,10 @@ var maximus = new Gladiator('Maximus', 120, 20, 15);
 
 //OTHER VARIABLES SETUP
 var hero = {};
-var opponentsArr = [thraex, retarius, murmilla, maximus];
+var enemy = {};
+// var opponentsArr = [thraex, retarius, murmilla, maximus];
 var heroChosen = false;
+var enemyChosen = false;
 
 //GLADIATOR STAT PUSH FUNCTIONS
 function thraexUpdate() {
@@ -60,34 +62,67 @@ $('#retariusPic').attr('src', 'assets/images/retarius.jpg')
 $('#murmillaPic').attr('src', 'assets/images/murmilla.jpg')
 $('#maximusPic').attr('src', 'assets/images/maximus.jpg')
 
-//GLADIATOR CHOICE
+//GLADIATOR PIC CLICK EVENTS
 $('.gladiatorPic').on('click', function() {
-    if (!heroChosen) {
+    if (!heroChosen) {//HERO PICKED
+        $('#instructions').text('Choose your opponent!');
+        heroChosen = true;
+        $('.headerImg').fadeOut('slow');
         if ($(this).attr('id') === 'thraexPic') { ///PLAYER CHOSE THRAEX
             hero = thraex;
-            opponentsArr.shift();
             $('#thraex').addClass('heroClass');
-            $('#retarius, #murmilla, #maximus').addClass('opponentClass')
+            $('#retarius, #murmilla, #maximus').addClass('opponentClass');
+            $('#thraexHealth').addClass('heroHealth');
         } else if ($(this).attr('id') === 'retariusPic') { //PLAYER CHOSE RETARIUS
             hero = retarius;
-            opponentsArr.splice(1,1);
             $('#retarius').addClass('heroClass');
             $('#thraex, #murmilla, #maximus').addClass('opponentClass')
+            $('#retariusHealth').addClass('heroHealth');
         } else if ($(this).attr('id') === 'murmillaPic') { //PLAYER CHOSE MURMILLA
             hero = murmilla;
-            opponentsArr.splice(2,1);
             $('#murmilla').addClass('heroClass');
             $('#retarius, #thraex, #maximus').addClass('opponentClass')
+            $('#murmillaHealth').addClass('heroHealth');
         } else if ($(this).attr('id') === 'maximusPic') { //PLAYER CHOSE MAXIMUS
             hero = maximus;
-            opponentsArr.pop();
-            $('#maximus').addClass('heroClass');
+            $('#maximus').addClass('heroClass md-auto');
             $('#retarius, #murmilla, #thraex').addClass('opponentClass')
+            $('#maximusHealth').addClass('heroHealth');
         }
+        $('.heroClass').animate ({bottom: '+=200px'}, 'slow');
+
+    } else if ((!enemyChosen) && heroChosen) {//ENEMY PICKED
+        $('#instructions').text('Engage in glorious combat!')
+        enemyChosen = true;
+        $('#attackBtn').removeClass('invisible');
+        if (($(this).attr('id') === 'thraexPic') && (hero !== thraex)) {
+            enemy = thraex;
+            $('#thraex').removeClass('opponentClass').addClass('enemyClass');
+            $('#thraexHealth').addClass('enemyHealth');
+        } else if (($(this).attr('id') === 'retariusPic') && (hero !== retarius)) {
+            enemy = retarius;
+            $('#retarius').removeClass('opponentClass').addClass('enemyClass');
+            $('#retariusHealth').addClass('enemyHealth');
+        } else if (($(this).attr('id') === 'murmillaPic') && (hero !== murmilla)) {
+            enemy = murmilla;
+            $('#murmilla').removeClass('opponentClass').addClass('enemyClass');
+            $('#murmillaHealth').addClass('enemyHealth');
+        } else if (($(this).attr('id') === 'maximusPic') && (hero !== maximus)) {
+            enemy = maximus;
+            $('#maximus').removeClass('opponentClass').addClass('enemyClass');
+            $('#maximusHealth').addClass('enemyHealth');
+        }
+        $('.enemyClass').animate ({bottom: '+=200px'}, 'slow');
     }
-    heroChosen = true;
+    
 })
 
+
+function combat() {
+    enemy.health -= hero.attack;
+    $('.enemyHealth').text(enemy.health);
+    
+}
 
 
 //COLORCYCLING TEXT
