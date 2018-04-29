@@ -27,8 +27,9 @@ h1 {
     font-family: 'Bowlby One SC', cursive;
 }
 
-.headerImg {
+#headerImg {
     width: 100%;
+    border: white 2px solid;
 }
 
 .gameRow {
@@ -64,6 +65,11 @@ h1 {
     font-family: 'Bowlby One SC', cursive;
     font-size: 24px;
     padding: 10px;
+}
+
+#gameResetBtn {
+    font-family: 'Bowlby One SC', cursive;
+
 }
 
 #instructions {
@@ -119,4 +125,8 @@ h1 {
 .deadClass {
     background: rgba(140, 114, 114, 0.8);
     margin-top: 10px;
+}
+
+.hiddenVid {
+    display: none;
 }
