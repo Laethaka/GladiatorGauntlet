@@ -63,6 +63,7 @@ function gameReset() {
     $('.heroClass .healthLine').html('Health: <span id="gladiatorHealth"></span>');
     $('.heroClass').removeClass('heroClass');
     $('.deadClass').removeClass('deadClass');
+    $('.deadPic').removeClass('deadPic');
     $('.gladiator .healthLine').removeClass('invisible');
     $('#instructions').text('Pick a gladiator to be your champion in the arena!');
     enemiesRemaining = 3;
@@ -133,7 +134,7 @@ $('.gladiatorPic').on('click', function() {
         }
         $('.heroClass').animate ({top: '-=200px'}, 'slow');
 
-    } else if ((!enemyChosen) && heroChosen && (enemiesRemaining > 0 && ($(this).attr('class') !== 'card-img-top gladiatorPic mx-auto heroPic'))) {//ENEMY PICKED
+    } else if ((!enemyChosen) && heroChosen && (enemiesRemaining > 0) && ($(this).attr('class') !== 'card-img-top gladiatorPic mx-auto heroPic') && ($(this).attr('class') !== 'card-img-top gladiatorPic mx-auto deadPic')) {//ENEMY PICKED
         $('#instructions').text('Engage in glorious combat!')
         enemyChosen = true;
         $('#attackBtn').removeClass('invisible');
@@ -170,6 +171,7 @@ function combat() {
             $('.enemyClass').animate ({top: '+=200px'}, 'slow');
             $('.enemyClass .gladiatorHeader').text("DEAD");
             $('.enemyClass .healthLine').addClass('invisible');
+            $('.enemyClass .gladiatorPic').addClass('deadPic');
             $('.enemyClass').removeClass('enemyClass').addClass('deadClass');
             enemyChosen = false;
             enemiesRemaining -= 1;
