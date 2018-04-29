@@ -73,25 +73,29 @@ $('.gladiatorPic').on('click', function() {
             $('#thraex').addClass('heroClass');
             $('#retarius, #murmilla, #maximus').addClass('opponentClass');
             $('#thraexHealth').addClass('heroHealth');
+            $('.opponentClass .attackLine').addClass('invisible');
         } else if ($(this).attr('id') === 'retariusPic') { //PLAYER CHOSE RETARIUS
             hero = retarius;
             $('#retarius').addClass('heroClass');
             $('#thraex, #murmilla, #maximus').addClass('opponentClass')
             $('#retariusHealth').addClass('heroHealth');
+            $('.opponentClass .attackLine').addClass('invisible');
         } else if ($(this).attr('id') === 'murmillaPic') { //PLAYER CHOSE MURMILLA
             hero = murmilla;
             $('#murmilla').addClass('heroClass');
             $('#retarius, #thraex, #maximus').addClass('opponentClass')
             $('#murmillaHealth').addClass('heroHealth');
+            $('.opponentClass .attackLine').addClass('invisible');
         } else if ($(this).attr('id') === 'maximusPic') { //PLAYER CHOSE MAXIMUS
             hero = maximus;
             $('#maximus').addClass('heroClass md-auto');
             $('#retarius, #murmilla, #thraex').addClass('opponentClass')
             $('#maximusHealth').addClass('heroHealth');
+            $('.opponentClass .attackLine').addClass('invisible');
         }
         $('.heroClass').animate ({bottom: '+=200px'}, 'slow');
 
-    } else if ((!enemyChosen) && heroChosen) {//ENEMY PICKED
+    } else if ((!enemyChosen) && heroChosen) {//ENEMY PICKED; DOES NOT PREVENT ENEMY FROM BEING HERO
         $('#instructions').text('Engage in glorious combat!')
         enemyChosen = true;
         $('#attackBtn').removeClass('invisible');
@@ -121,7 +125,18 @@ $('.gladiatorPic').on('click', function() {
 function combat() {
     enemy.health -= hero.attack;
     $('.enemyHealth').text(enemy.health);
-    
+        if (enemy.health <= 0) { //ENEMY KILLED
+            $('.enemyClass').animate ({top: '+=200px'}, 'slow');
+            $('.enemyClass .gladiatorHeader').text("DEAD");
+            $('.enemyClass .healthLine').addClass('invisible');
+            $('.enemyClass').removeClass('enemyClass').addClass('deadClass');
+            enemyChosen = false;
+            enemy = {};
+            $('#attackBtn').addClass('invisible');
+            $('#instructions').text('Choose your next opponent!');
+        };
+    hero.health -= enemy.attack;
+    $('.heroClass')
 }
 
 

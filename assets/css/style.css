@@ -108,3 +108,8 @@ h1 {
     background: rgba(230, 14, 14, 0.8);
     margin-top: 10px;
 }
+
+.deadClass {
+    background: rgba(140, 114, 114, 0.8);
+    margin-top: 10px;
+}
