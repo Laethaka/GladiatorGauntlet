@@ -59,11 +59,13 @@ maximusUpdate();
 function gameReset() {
     $('#headerImg').attr('src', 'assets/images/r_gladiators.jpg')
     $('.opponentClass').removeClass('opponentClass');
+    $('.heroPic').removeClass('heroPic');
     $('.heroClass .healthLine').html('Health: <span id="gladiatorHealth"></span>');
     $('.heroClass').removeClass('heroClass');
     $('.deadClass').removeClass('deadClass');
     $('.gladiator .healthLine').removeClass('invisible');
     $('#instructions').text('Pick a gladiator to be your champion in the arena!');
+    enemiesRemaining = 3;
     heroChosen = false;
     enemyChosen = false;
     thraex = new Gladiator('Thraex', 100, 16, 15);
@@ -129,9 +131,9 @@ $('.gladiatorPic').on('click', function() {
             $('#maximusHealth').addClass('heroHealth');
             // $('.opponentClass .attackLine').addClass('invisible');
         }
-        $('.heroClass').animate ({bottom: '+=200px'}, 'slow');
+        $('.heroClass').animate ({top: '-=200px'}, 'slow');
 
-    } else if ((!enemyChosen) && heroChosen && (enemiesRemaining > 0 && ($(this).attr('class') !== 'card-img-top gladiatorPic mx-auto heroPic'))) {//ENEMY PICKED; DOES NOT PREVENT ENEMY FROM BEING HERO
+    } else if ((!enemyChosen) && heroChosen && (enemiesRemaining > 0 && ($(this).attr('class') !== 'card-img-top gladiatorPic mx-auto heroPic'))) {//ENEMY PICKED
         $('#instructions').text('Engage in glorious combat!')
         enemyChosen = true;
         $('#attackBtn').removeClass('invisible');
@@ -152,7 +154,7 @@ $('.gladiatorPic').on('click', function() {
             $('#maximus').removeClass('opponentClass').addClass('enemyClass');
             $('#maximusHealth').addClass('enemyHealth');
         }
-        $('.enemyClass').animate ({bottom: '+=200px'}, 'slow');
+        $('.enemyClass').animate ({top: '-=200px'}, 'slow');
     }
     
 })
