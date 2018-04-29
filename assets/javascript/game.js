@@ -10,7 +10,7 @@ class Gladiator {
 
 //GLADIATOR OBJECTS SETUP
 var thraex = new Gladiator('Thraex', 100, 16, 15);
-var retarius = new Gladiator('Retarius', 70, 22, 15);
+var retarius = new Gladiator('Retarius', 80, 22, 15);
 var murmilla = new Gladiator('Murmilla', 110, 14, 15);
 var maximus = new Gladiator('Maximus', 90, 18, 15);
 
@@ -57,7 +57,7 @@ maximusUpdate();
 
 //GAME RESET FUNCTION
 function gameReset() {
-    $('#headerImg').attr('src', 'assets/images/r_gladiators.jpg')
+    $('#headerImg').attr('src', 'assets/images/r_gladiators.jpg');
     $('.opponentClass').removeClass('opponentClass');
     $('.heroPic').removeClass('heroPic');
     $('.heroClass .healthLine').html('Health: <span id="gladiatorHealth"></span>');
@@ -69,7 +69,7 @@ function gameReset() {
     heroChosen = false;
     enemyChosen = false;
     thraex = new Gladiator('Thraex', 100, 16, 15);
-    retarius = new Gladiator('Retarius', 70, 22, 15);
+    retarius = new Gladiator('Retarius', 80, 22, 15);
     murmilla = new Gladiator('Murmilla', 110, 14, 15);
     maximus = new Gladiator('Maximus', 90, 18, 15);
     thraexUpdate();
