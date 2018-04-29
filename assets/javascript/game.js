@@ -136,7 +136,6 @@ function combat() {
             $('.enemyClass .healthLine').addClass('invisible');
             $('.enemyClass').removeClass('enemyClass').addClass('deadClass');
             enemyChosen = false;
-            enemy = {};
             $('#attackBtn').addClass('invisible');
             $('#instructions').text('Choose your next opponent!');
         };
