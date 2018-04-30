@@ -135,7 +135,7 @@ $('.gladiatorPic').on('click', function() {
         }
         $('.heroClass').animate ({top: '-=200px'}, 'slow');
 
-    } else if ((!enemyChosen) && heroChosen && (enemiesRemaining > 0) && ($(this).attr('class') !== 'card-img-top gladiatorPic mx-auto heroPic') && ($(this).attr('class') !== 'card-img-top gladiatorPic mx-auto deadPic')) {//ENEMY PICKED
+    } else if ((!enemyChosen) && heroChosen && (enemiesRemaining > 0) && ($(this).attr('class') !== 'card-img-top gladiatorPic mx-auto heroPic') && ($(this).attr('class') !== 'card-img-top gladiatorPic mx-auto deadPic') && (hero.health > 0)) {//ENEMY PICKED
         $('#instructions').text('Engage in glorious combat!')
         enemyChosen = true;
         $('#attackBtn').removeClass('invisible');
