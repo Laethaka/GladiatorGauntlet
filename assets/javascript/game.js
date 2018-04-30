@@ -65,6 +65,7 @@ function gameReset() {
     $('.deadClass').removeClass('deadClass');
     $('.deadPic').removeClass('deadPic');
     $('.gladiator .healthLine').removeClass('invisible');
+    $('.gladiator .attackLine').removeClass('invisible');
     $('#instructions').text('Pick a gladiator to be your champion in the arena!');
     enemiesRemaining = 3;
     heroChosen = false;
@@ -171,6 +172,7 @@ function combat() {
             $('.enemyClass').animate ({top: '+=200px'}, 'slow');
             $('.enemyClass .gladiatorHeader').text("DEAD");
             $('.enemyClass .healthLine').addClass('invisible');
+            $('.enemyClass .attackLine').addClass('invisible');
             $('.enemyClass .gladiatorPic').addClass('deadPic');
             $('.enemyClass').removeClass('enemyClass').addClass('deadClass');
             enemyChosen = false;
